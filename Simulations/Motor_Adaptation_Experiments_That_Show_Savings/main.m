@@ -65,6 +65,28 @@ patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 legend('Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
 ylim([-0.6, 0.6])
 
+%% Multi-Rate Model
+
+clc
+close all
+
+x = zeros(1, num_trials);
+x1 = zeros(1, num_trials);
+x2 = zeros(1, num_trials);
+
+for trial_no = 2:num_trials
+    [x1(trial_no), x2(trial_no), x(trial_no)] = multi_rate(...
+        x1(trial_no-1), x2(trial_no-1), f(trial_no-1), [Af, As], [Bf, Bs], err_clamp_bool);
+end
+
+figure
+hold on
+plot(1:num_trials, x, 'r', 'LineWidth', 2)
+plot(1:num_trials, x1, '--g', 'LineWidth', 2)
+plot(1:num_trials, x2, '--b', 'LineWidth', 2)
+patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
+legend('Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
+ylim([-0.6, 0.6])
 
 
 
