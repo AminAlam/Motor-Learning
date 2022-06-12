@@ -2,6 +2,9 @@ clc
 clear
 close all
 
+addpath '../Paradigms_Functions/'
+addpath '../Utils/'
+
 % %%%%%%%%%%%%%%%%%%%%%% Configs
 num_trials = 900;
 err_clamp_bool = 0;
@@ -33,9 +36,23 @@ for trial_no = 2:num_trials
 end
 
 figure
-plot_disturbance(f, num_trials, deadaptation_trials)
 hold on
+boxy = [-1.1 1.1 1.1 -1.1];
+box = [length_initial_zeros length_initial_zeros ...
+        deadaptation_trials(1)-1 deadaptation_trials(1)-1];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [deadaptation_trials(1) deadaptation_trials(1)...
+        deadaptation_trials(end) deadaptation_trials(end)];
+patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
+        num_trials num_trials];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+
+plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
+
+legend('adaptation trials', 'deadaptation trials', 'redaptation trials',...
+    'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
 
 % initial learning vs relearning (null_trials_inserted)
 washout_trials = 431:431+50;
@@ -96,12 +113,25 @@ for trial_no = 2:num_trials
 end
 
 figure
+hold on
+boxy = [-1.1 1.1 1.1 -1.1];
+box = [length_initial_zeros length_initial_zeros ...
+        deadaptation_trials(1)-1 deadaptation_trials(1)-1];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [deadaptation_trials(1) deadaptation_trials(1)...
+        deadaptation_trials(end) deadaptation_trials(end)];
+patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
+        num_trials num_trials];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+
 plot_disturbance(f, num_trials, deadaptation_trials)
 hold on
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 plot(1:num_trials, x1, '--g', 'LineWidth', 2)
 plot(1:num_trials, x2, '--b', 'LineWidth', 2)
-legend('Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
+legend('adaptation trials', 'deadaptation trials', 'redaptation trials', ...
+    'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
 
 % initial learning vs relearning (null_trials_inserted)
 washout_trials = 431:431+50;
@@ -165,13 +195,26 @@ for trial_no = 2:num_trials
 end
 
 figure
+hold on
+boxy = [-1.1 1.1 1.1 -1.1];
+box = [length_initial_zeros length_initial_zeros ...
+        deadaptation_trials(1)-1 deadaptation_trials(1)-1];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [deadaptation_trials(1) deadaptation_trials(1)...
+        deadaptation_trials(end) deadaptation_trials(end)];
+patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
+        num_trials num_trials];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+
 plot_disturbance(f, num_trials, deadaptation_trials)
 hold on
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 plot(1:num_trials, x1, '--g', 'LineWidth', 2)
 plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
-legend('Distrurbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
+legend('adaptation trials', 'deadaptation trials', 'redaptation trials', ...
+    'Disturbance', 'Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
 
 % initial learning vs relearning (null_trials_inserted)
 washout_trials = 431:431+50;
