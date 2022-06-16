@@ -2,8 +2,8 @@ clc
 clear
 close all
 
-addpath '../Paradigms_Functions/'
-addpath '../Utils/'
+addpath '../../Paradigms_Functions/'
+addpath '../../Utils/'
 
 % %%%%%%%%%%%%%%%%%%%%%% Configs
 num_trials = 900;
@@ -70,7 +70,8 @@ imagesc(Af_list, As_list, squeeze(rebound_mat(2:end,2:end,1,1)))
 xlabel('A_f')
 ylabel('A_s')
 set(gca,'YDir','normal')
-colorbar
+c = colorbar;
+c.Label.String = 'Rebound';
 caxis([0, 0.8])
 %% Bf vs Bs
 figure
@@ -78,7 +79,8 @@ imagesc(Bf_list, Bs_list, squeeze(rebound_mat(1,1,2:end,2:end)))
 xlabel('B_f')
 ylabel('B_s')
 set(gca,'YDir','normal')
-colorbar
+c = colorbar;
+c.Label.String = 'Rebound';
 caxis([0, 0.4])
 %% Af vs Bf
 figure
@@ -86,7 +88,8 @@ imagesc(Af_list, Bf_list, squeeze(rebound_mat(2:end,1,2:end,1)))
 xlabel('A_f')
 ylabel('B_f')
 set(gca,'YDir','normal')
-colorbar
+c = colorbar;
+c.Label.String = 'Rebound';
 caxis([0, 0.7])
 %% As vs Bs
 figure
@@ -94,7 +97,8 @@ imagesc(As_list, Bs_list, squeeze(rebound_mat(1,2:end,1,2:end)))
 xlabel('A_s')
 ylabel('B_s')
 set(gca,'YDir','normal')
-colorbar
+c = colorbar;
+c.Label.String = 'Rebound';
 caxis([0, 0.7])
 %% Af vs Bs
 figure
@@ -102,7 +106,8 @@ imagesc(Af_list, Bs_list, squeeze(rebound_mat(2:end,1,1,2:end)))
 xlabel('A_f')
 ylabel('B_s')
 set(gca,'YDir','normal')
-colorbar
+c = colorbar;
+c.Label.String = 'Rebound';
 caxis([0, 0.7])
 %% As vs Bf
 figure
@@ -110,5 +115,6 @@ imagesc(As_list, Bf_list, squeeze(rebound_mat(1,2:end,2:end,1)))
 xlabel('A_s')
 ylabel('B_f')
 set(gca,'YDir','normal')
-colorbar
+c = colorbar;
+c.Label.String = 'Rebound';
 caxis([0, 0.7])

@@ -1,0 +1,1 @@
+What will happen if we have error term in washout trials? (Figure 2 but the error clamp bool is zero)
