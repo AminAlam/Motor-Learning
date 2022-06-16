@@ -1,0 +1,1 @@
+We know that single state and gain specific models can't explain re-adaptation. What will be the results of Figure 4 when the model is changed to single state or gain specific?
