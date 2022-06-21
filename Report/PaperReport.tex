@@ -1,0 +1,127 @@
+\documentclass[9pt,twocolumn]{paper-template}
+% Use the lineno option to display guide line numbers if required.
+\usepackage{lipsum}
+\usepackage{tabularx} % in the preamble
+\usepackage{subcaption}
+\usepackage{multirow}
+\templatetype{twocolumn} % Choose template 
+% {pnasresearcharticle} = Template for a two-column research article
+% {pnasmathematics} %= Template for a one-column mathematics article
+% {pnasinvited} %= Template for a PNAS invited submission
+
+\title{A Review on Interactive Adaptive Processes Which Underline Short-Term Motor Learning}
+
+% Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+\author[a]{MohammadAmin Alamalhoda}
+\author[a]{Arsalan Firoozi} 
+\author[a]{Mehran khorshidi}
+\affil[a]{Student, EE Department, Sharif University of Technology}
+
+% Please add here a significance statement to explain the relevance of your work
+\significancestatement{Hmmmmm}
+
+% Please include corresponding author, author contribution and author declaration information
+\authorcontributions{Author contributions}
+\equalauthors{\textsuperscript{1}All contributed equally to this work}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+\keywords{Motor learning} 
+
+\begin{abstract}
+Abstract
+\end{abstract}
+
+\dates{This manuscript was compiled on \today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
+
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
+\dropcap{N}ull
+\\
+\section*{Results}
+
+
+
+\begin{figure*}[h!]
+  \centering
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/single_state_adaptation}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/gain_specific_adaptation}
+  \end{subfigure}
+   \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/multi_rate_adaptation}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/single_state_relearning}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/gain_specific_relearning}
+  \end{subfigure}
+   \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/multi_rate_relearning}
+  \end{subfigure}
+      \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/single_state_saving}
+    \caption{Single State}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/gain_specific_saving}
+        \caption{Gain Specific}
+  \end{subfigure}
+   \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure1/multi_rate_saving}
+        \caption{Multi Rate}
+  \end{subfigure}
+  \caption{Simulations of Motor Adaptation Experiments That Show Savings\\
+  \textbf{First row} shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. \textbf{Second row} shows a direct comparison of simulated performance in the initial learning and relearning blocks.  \textbf{Third row} shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the relearning block compared to the 30th trial in the initial learning block. 
+}
+  \label{fig:figure1}
+\end{figure*}
+
+
+
+
+\begin{figure*}[h!]
+  \centering
+  \begin{subfigure}[b]{0.9\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure4/z0_1}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.9\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure4/z0_5}
+  \end{subfigure}
+   \begin{subfigure}[b]{0.9\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure4/z0_9}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.9\linewidth}
+    \includegraphics[width=\linewidth]{figures/figure4/erros_sensivity}
+  \end{subfigure}
+  \caption{Simulations of Motor Adaptation Experiments That Show Savings\\
+  \textbf{First row} shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. \textbf{Second row} shows a direct comparison of simulated performance in the initial learning and relearning blocks.  \textbf{Third row} shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the relearning block compared to the 30th trial in the initial learning block. 
+}
+  \label{fig:figure4}
+\end{figure*}
+
+
+\newpage
+
+\acknow{We highly appreciate ... }
+
+\showacknow{} % Display the acknowledgments section
+
+\section*{References}
+% Bibliography
+\bibliography{references}
+
+\bigskip
+\begin{center}
+All codes will be provided to you upon request\\
+\smallskip
+Contact ma.alamalhoda@gmail.com
+\end{center}
+\end{document}
