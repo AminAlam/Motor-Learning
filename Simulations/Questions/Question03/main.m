@@ -17,7 +17,7 @@ B = 0.013;
 % Multi-Rate Model
 Af = 0.92;
 As = 0.996;
-Bf = 0.03;
+Bf = 0.03; 
 Bs = 0.004;
 
 num_trials_init = 900;
