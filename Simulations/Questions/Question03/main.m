@@ -26,14 +26,13 @@ washout_trials = [];
 f_init = make_disturbance(num_trials_init, deadaptation_trials, washout_trials,...
                     length_initial_zeros);
 
-%% %%%%%%%%%%%%%%%%%%%%%%%%%% Single-State
-
 x_init = zeros(1, num_trials_init);
 
 for trial_no = 2:num_trials_init
     x_init(trial_no) = single_state(x_init(trial_no-1), f_init(trial_no-1), A, B, err_clamp_bool);
 end
 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%% Single-State
 % Paradigm 1
 clc
 close all
@@ -43,7 +42,7 @@ yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -81,10 +80,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), '--b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 %% Paradigm 2-test
 clc
 close all
@@ -94,7 +99,7 @@ yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -135,10 +140,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), '--b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 %% Paradigm 3
 clc
 close all
@@ -148,7 +159,7 @@ yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -192,10 +203,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), '--b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%% Gain-Specific
 clc
@@ -218,7 +235,7 @@ yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -259,10 +276,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), '--b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 %% Paradigm 2-test
 clc
 close all
@@ -272,7 +295,7 @@ yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -316,10 +339,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), '--b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 %% Paradigm 3
 clc
 close all
@@ -329,7 +358,7 @@ yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -376,7 +405,13 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), '--b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off

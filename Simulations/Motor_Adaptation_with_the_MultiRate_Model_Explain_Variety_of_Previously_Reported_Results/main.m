@@ -55,13 +55,15 @@ patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 plot(1:num_trials_init, f, 'k', 'LineWidth', 4)
 ylim([-1.1 1.1])
 xlim([1, 150])
+xlabel('Trial Number')
+ylabel('Disturbance')
 
 figure(2)
 yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -102,10 +104,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 %% Paradigm 2-test
 clc
 close all
@@ -124,13 +132,15 @@ patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
 plot(1:num_trials_init, f, 'k', 'LineWidth', 4)
 ylim([-1.1 1.1])
 xlim([1, 150])
+xlabel('Trial Number')
+ylabel('Disturbance')
 
 figure(2)
 yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -173,10 +183,16 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
 %% Paradigm 3
 clc
 close all
@@ -199,13 +215,15 @@ patch(box,boxy,'p','FaceAlpha',0.1, 'EdgeAlpha', 0)
 plot(1:num_trials_init, f, 'k', 'LineWidth', 4)
 ylim([-1.1 1.1])
 xlim([1, 150])
+xlabel('Trial Number')
+ylabel('Disturbance')
 
 figure(2)
 yline(0, '--k');
 hold on
 
 figure(3)
-yline(0, '--k');
+plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 hold on
 
 counter = 1;
@@ -252,7 +270,13 @@ end
 figure(2)
 plot(1:num_trials_init, x_init, 'b', 'LineWidth', 2)
 ylim([-0.7 0.7])
+xlabel('Trial Number')
+ylabel('Adaptation')
 
 figure(3)
-plot(1:num_trials_init-length_initial_zeros, x_init(length_initial_zeros+1:num_trials_init), 'b', 'LineWidth', 2)
 xlim([0 400])
+xlabel('Trial Number')
+ylabel('Adaptation')
+plot([0 400], [0 0], '--k');
+legend('Original Adaptation', 'Opposite FF (30 Trials)', 'Opposite FF (60 Trials)', 'Opposite FF (90 Trials)', '', 'Location', 'southeast');
+box off
