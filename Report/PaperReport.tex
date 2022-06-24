@@ -44,6 +44,36 @@ Abstract
 \\
 \section*{Results}
 
+
+\textbf{Motor Adaptation Experiments That Show Savings}
+Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows savings in eye saccade adaptation. The progress of motor output in learn-unlearn-relearn paradigms with three different models is simulated. Models are (1) a single-state, single time-constant model, (2) a two-state, gain- specific model, and (3) a two-state, gain-independent, multi- rate model. All of these models give motor output as a function of current motor state and the error of last trial. The learning rules for these models are:
+
+\begin{eqnarray*}
+& (1)\;Single\;State\;Model:\\
+& x(n+1) = Ax(n)+Be(n)\\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+& (1)\;Gain\;Specific:\\
+&x1(n+1) = min(0,[Ax_1(n)+Be(n)])\\
+&x2(n+1) = max(0,[Ax_2(n)+Be(n)])\\
+&x = x_1+x_2
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+& (1)\;Multi\;Rate:\\
+& x1(n+1) = A_fx_1(n) + B_fe(n)\\
+& x2(n+1) = A_sx_2(n) + B_se(n)\\
+&x = x_1+x_2
+\end{eqnarray*}
+
+All of these models have error term ($e(n)$) because there is a difference between the motor output $x(n)$ and the state of the environment $f(n)$, so: $e(n) = f (n) - x(n)$.\\
+As can be seen in the results of the simulations, single-state model can't reproduce saving, while both of the gain-specific model proposed by Kojima et al. and multi-rate model proposed by Shadmehr et al. can produce saving. Also, both of these models show decay in the amount of saving when null trials are inserted before the learning block which makes sense based on our intuition of the motor control processes. Because the internal states are different, both systems’ responses to the learning stimulus are altered. Relearning is faster than initial learning in the gain-specific model because both the up and down states can contribute to relearning whereas only the up state contributes to initial learning. In the case of the multi-rate model, relearning is faster than initial learning because when relearning starts, the
+slow state is already biased towards relearning, making relearning more dependent on the fast state compared to initial learning.\\
+
+
+
 \textbf{Robustness of spontaneous rebound in the multi-rate model}\\
 A key feature of the multi-rate model is its ability to predict the spontaneous recovery. Figure \ref{fig:multi_rate_recovery} only shows spontaneous recovery for
 specific sets of model parameters, however spontaneous recovery is a general feature of this
@@ -60,7 +90,33 @@ than 20\%, where the amount of spontaneous recovery refers to the ratio of the m
 recovery in the error clamp phase to the asymptotic amount of learning during the initial
 learning phase. These simulations show that spontaneous recovery is a robust feature of
 the multi-rate model in this experimental paradigm, and that the finding of spontaneous
-recovery does not depend upon a narrow choice of parameter values. 
+recovery does not depend upon a narrow choice of parameter values.\\
+
+\textbf{Memory of errors}\\
+
+As Shadmeher et al. stated in their paper(\cite{mem_of_error}), The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is error-sensitivity parameter. They assumed the action $u(n)$ to be zeroSo, the model becomes:
+
+\begin{eqnarray*}
+& e(n) = x_n-\hat{x}_n\\
+& \hat{x}_{n+1} = \alpha \hat{x}_n + \eta_ne_n
+\end{eqnarray*}
+where
+\begin{eqnarray*}
+& \eta(e^{(n)}) = \sum_i^N \omega_ig_i(e^{(n)})\\
+&g_i(e^{(n)}) = exp(\frac{-(e^{(n)}-{e^\smallsmile}_i)^2}{2\sigma^2})
+\end{eqnarray*}
+
+
+On trial $n-1$ the motor command $u(n-1)$ produces an error $e(n-1)$ , as illustrated in the top part of Fig. ---. The nervous system learns from this error and produces motor command $u (n)$ on the subsequent trial, resulting in $e(n)$ . In a slowly switching environment (top part of Fig. ---), $e(n)$ has the same sign as $e(n-1)$ . In this case, error-sensitivity should increase around $e(n-1)$ (Fig. ---). On the other hand, in a rapidly switching environment (Fig. ---), $e(n)$ has a different sign than $e(n-1)$ . In this case, error-sensitivity should decrease:
+
+\begin{eqnarray*}
+& \omega^{(n+1)} =omega^{(n)}+\beta sign(e^{(n-1)}e^{(n)}) \frac{g(e^{(n-1)})}{g^T(e^{(n-1)})g(e^{(n-1)})}\\
+&g_i(e^{(n)}) = exp(\frac{-(e^{(n)}-{e^\smallsmile}_i)^2}{2\sigma^2})
+\end{eqnarray*}
+
+We have simulated this model and the results are shown in Figure \ref{fig:herzfeld}
+
+
 
 
 \begin{figure*}[h!]
