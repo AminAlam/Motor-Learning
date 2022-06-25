@@ -25,11 +25,11 @@
 \equalauthors{\textsuperscript{1}All contributed equally to this work}
 
 % Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
-\keywords{Motor learning } 
+\keywords{Motor learning, Multi-Rate Model, Error-Clamp} 
 
 \begin{abstract}
 
-Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is demonstrated that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system is capable of prediction of spontaneous recovery (adaptation rebound) if error feedback is zeros. Our results suggest that motor adaptation depends on at least two distinct neural systems that have different sensitivity to error and retain information at different rates. Also, the motor skill learning will be more if the changes in the environment are slow.
+Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is reviewed that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system is capable of prediction of spontaneous recovery (adaptation rebound) if error feedback is zeros. The results suggest that motor adaptation depends on at least two distinct neural systems that have different sensitivity to error and retain information at different rates. Also, the motor skill learning will be more if the changes in the environment are slow. In this view, motor memory is a memory of motor commands, acquired through trial-and-error and reinforcement. Here is shown that the brain controls how much it is willing to learn from the current error through a principled mechanism that depends on the history of past errors. 
 \end{abstract}
 
 \dates{This manuscript was compiled on \today}
@@ -46,7 +46,7 @@ Multiple models have tried to simulate the motor skill acquisition but most of t
 \section*{Results}
 
 
-Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows savings in eye saccade adaptation. The progress of motor output in learn-unlearn-relearn paradigms with three different models is simulated. Models are (1) a single-state, single time-constant model, (2) a two-state, gain- specific model, and (3) a two-state, gain-independent, multi- rate model. All of these models give motor output as a function of current motor state and the error of last trial. The learning rules for these models are:
+Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows saving in eye saccade adaptation. The progress of motor output in learn-unlearn-re-learn paradigms with three different models is simulated. Models are (1) a single-state, single-time-constant model, (2) a two-state, gain-specific model, and (3) a two-state, gain-independent, multi-rate model. All of these models give motor output as a function of the current motor state and the error of the last trial. The learning rules for these models are:
 
 \begin{eqnarray*}
 & (1)\;Single\;State:\\
@@ -69,8 +69,8 @@ Figure \ref{fig:saving} shows simulations of the experimental paradigm that show
 \end{eqnarray*}
 
 All of these models have error term ($e(n)$) because there is a difference between the motor output $x(n)$ and the state of the environment $f(n)$, so: $e(n) = f (n) - x(n)$.\\
-As can be seen in the results of the simulations, single-state model can't reproduce saving, while both of the gain-specific model proposed by Kojima et al. and multi-rate model proposed by Shadmehr et al. can produce saving. Also, both of these models show decay in the amount of saving when null trials are inserted before the learning block which makes sense based on our intuition of the motor control processes. Because the internal states are different, both systems’ responses to the learning stimulus are altered. Relearning is faster than initial learning in the gain-specific model because both the up and down states can contribute to relearning whereas only the up state contributes to initial learning. In the case of the multi-rate model, relearning is faster than initial learning because when relearning starts, the
-slow state is already biased towards relearning, making relearning more dependent on the fast state compared to initial learning.\\
+As can be seen in the results of the simulations (Figure \ref{fig:saving}), the single-state model can't reproduce saving, while both the gain-specific model proposed by Kojima et al. and the multi-rate model proposed by Shadmehr et al. can produce saving. Also, both of these models show decay in the amount of saving when null trials are inserted before the learning block which makes sense based on our intuition of the motor control processes. Because the internal states are different, both systems’ responses to the learning stimulus are altered. re-learning is faster than initial learning in the gain-specific model because both the up and down states can contribute to re-learning whereas only the upstate contributes to initial learning. In the case of the multi-rate model, re-learning is faster than initial learning because when re-learning starts, the
+slow state is already biased towards re-learning, making re-learning more dependent on the fast state compared to initial learning.\\
 
 
 
@@ -78,15 +78,15 @@ slow state is already biased towards relearning, making relearning more dependen
   \centering
     \includegraphics[width=\linewidth]{figures/figure1/Fig}
   \caption{\textbf{Simulations of Motor Adaptation Experiments That Show Savings}\\
-  (A) shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. (B) shows a direct comparison of simulated performance in the initial learning and relearning blocks.  (C) shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the relearning block compared to the 30th trial in the initial learning block. 
+  (A) shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. (B) shows a direct comparison of simulated performance in the initial learning and re-learning blocks.  (C) shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the re-learning block compared to the 30th trial in the initial learning block. 
 }
   \label{fig:saving}
 \end{figure*}
 
 
-Although there are similarities in predictions of the Gain specific model and Multi rate model, there are differences in their internal states. It suggests that these models can evolve different motor adaptations through specific trials. Here we set up a test that a zero error paradigm (error-clamp) comes after the unlearning state, and the experiment becomes a learning, unlearning, error clamp (Fig. 2A). In this case, the Gain specific and Multi rate models show different predictions about the evolution of motor output (Fig. 2A). In the Gain specific model, the forecast of the motor output following unlearning block remains at zero.
-In contrast, the Multi rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of staying zero during this block. On the other hand, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of remaining zero. The fast state of the multi-rate model keeps following the blocks very well, but the slow state keeps tracking the learning block's motor output during the unlearning state and helps the model to rebound the motor output of the learning state transiently. Here we test another trial in which there is a re-learning block after the error-clamp state (Fig. 2C). With the Multi rate model, the rebounding in the error-clamp state accelerates re-learning and demonstrates the saving in this case, while the gain-specific model is unable to demonstrate this (Fig. 2C).
-We then try to use a washout trial instead of the error-clamp paradigm, where the output is zero instead of the error (Fig. 2B). We can see that after deadaptation, the motor output of the single state model is negative for a short time, but after that, it remains at zero. For gain specific model, the same thing happens but the difference is the time of being negative for the motor output and it is more negative for the Gain specific model. The output of the Multi rate model is a little bit different from error-clamp paradigm. The rebound effect can be seen here, too; But the peak of the rebound is less than the error-clamp paradigm (Fig. 2B). The reason of differences is that the f(x) is zero instead of e(x), and it leads to differences in the peaks values. We do it also for the second stimulation in last part. Also we switched the error-clamp with washout paradigm (learning, unlearning, relearning) (Fig. 2E). The differences between the output of single-state model with error-clamp and washout paradigm is just a little bit of being negative for a short while after unlearning block. The difference between outputs of the Gain specific model in two trials is just like the Single state model and there is a undershoot after the unlearning block. In contrast, the differences between the outputs of Multi rate model is in the peak of the rebound, and a little undershoot after unlearning block. Also a difference between the two fast states can be seen (Fig. 2E).
+Although there are similarities in predictions of the gain-specific model and multi-rate model, there are differences in their internal states. It suggests that these models can evolve different motor adaptations through specific trials. Here we set up a test that a zero error paradigm (error-clamp) comes after the unlearning state, and the experiment becomes a learning, unlearning, and error clamp (Figure \ref{fig:error_clamp} A). In this case, the gain-specific and multi-rate models show different predictions about the evolution of motor output (Figure \ref{fig:error_clamp} A). In the gain-specific model, the forecast of the motor output following unlearning block remains at zero.
+In contrast, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of staying zero during this block. On the other hand, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of remaining zero. The fast state of the multi-rate model keeps following the blocks very well, but the slow state keeps tracking the learning block's motor output during the unlearning state and helps the model to rebound the motor output of the learning state transiently. Here we test another trial in which there is a re-learning block after the error-clamp state (Figure \ref{fig:error_clamp} C). With the multi-rate model, the rebounding in the error-clamp state accelerates re-learning and demonstrates the saving in this case, while the gain-specific model is unable to demonstrate this (Figure \ref{fig:error_clamp} C).
+We then try to use a washout trial instead of the error-clamp paradigm, where the output is zero instead of the error (Figure \ref{fig:error_clamp} B). We can see that after de-adaptation, the motor output of the single state model is negative for a short time, but after that, it remains at zero. For gain-specific model, the same thing happens but the difference is the time of being negative for the motor output and it is more negative for the gain-specific model. The output of the multi-rate model is a little bit different from the error-clamp paradigm. The rebound effect can be seen here, too; But the peak of the rebound is less than the error-clamp paradigm (Figure \ref{fig:error_clamp} B). The reason for the differences is that the f(x) is zero instead of e(x), and it leads to differences in the peak values. We do it also for the second stimulation in the last part. Also, we switched the error clamp with the washout paradigm (learning, unlearning, re-learning) (Figure \ref{fig:error_clamp} E). The difference between the output of the single-state model with error-clamp and washout paradigm is just a little bit of being negative for a short while after unlearning block. The difference between outputs of the gain-specific model in two trials is just like the Single state model and there is a undershoot after the unlearning block. In contrast, the differences between the outputs of the multi-rate model are in the peak of the rebound, and a little undershoot after unlearning block. Also, a difference between the two fast states can be seen (Figure \ref{fig:error_clamp} E).
 
 
 
@@ -94,37 +94,64 @@ We then try to use a washout trial instead of the error-clamp paradigm, where th
   \centering
     \includegraphics[width=\linewidth]{figures/figure3/Fig}
   \caption{\textbf{ Simulation of Motor Adaption in Error-clamp and Washout Paradigm}\\
-The columns are different models, from left to right: Single-state model, Gain-specific model, Multi rate model.(A) The first two models just follow the baseline after the unlearning block and in error-clamp paradigm. But in multi-rate model for error-clamp paradigm, we can see a transient rebound in motor output and in the direction of the motor output displayed in initial learning block, resulting in spontaneous recovery.
-(B) Paradigm for simulated washout experiment, where error-clamp block in figure 2A is replaced by washout block. The washout block is where the output is zero, not the error. The columns are the same as in (A). The differences between this section and (A) is the undershoot in single-state and gain-specific model after unlearning paradigm. In the multi-rate model the peak of the transient rebound is less than in (A). Also we can see an undershoot after unlearning block.
-(C) Paradigm for error-clamp/relearning experiment. Here  there is a relearning block coming after the error-clamp block. The columns are like (A). The Multi rate model predicts the performance at the start of the relearning block better than the baseline. The other two models start from the baseline at the start of the relearning block. 
-(D) Paradigm for simulated washout/relearning experiment. The paradigm is just like (C), but error-clamp block replaced by washout, where the output f(x) is zero, not the error. The columns are similar to (A). The differences between tise result and (C) are like (B), and also there are differences in internal states of multi-rate model here and (C).
+The columns are different models, from left to right: single-state model, Gain-specific model, and multi-rate model.(A) The first two models just follow the baseline after the unlearning block and in the error-clamp paradigm. But in the multi-rate model for the error-clamp paradigm, we can see a transient rebound in motor output and in the direction of the motor output displayed in the initial learning block, resulting in spontaneous recovery.
+(B) Paradigm for simulated washout experiment, where an error-clamp block in figure 2A is replaced by a washout block. The washout block is where the output is zero, not the error. The columns are the same as in (A). The difference between this section and (A) is the undershoot in single-state and gain-specific model after unlearning paradigm. In the multi-rate model, the peak of the transient rebound is less than in (A). Also, we can see an undershoot after unlearning block.
+(C) Paradigm for error-clamp/re-learning experiment. Here there is a re-learning block coming after the error-clamp block. The columns are like (A). The multi-rate model predicts the performance at the start of the re-learning block better than the baseline. The other two models start from the baseline at the start of the re-learning block. 
+(D) Paradigm for simulated washout/re-learning experiment. The paradigm is just like (C), but the error-clamp block is replaced by washout, where the output f(x) is zero, not the error.
 }
   \label{fig:error_clamp}
 \end{figure*}
 
 
-It’s been reported that an initial motor adaptation has faster time constant in comparison with subsequent adaptation for the oppositely directed stimulus. [\cite{Bizzi}, \cite{shadmehr_jn}, \cite{Wolpert}] We’ve tested the multi-rate model under different stimuli and the result clearly shows we have faster time constant for the initial adaptation. 
-The first stimulus is Anterograde interference which consists of a number of trials (In this case: 30, 60 and 120) as adaptation and 50 trials as deadaptation (Figure \ref{fig:Anterograde_Interference_Simulation} A). In Figure \ref{fig:Anterograde_Interference_Simulation} B, the raw response of multi-rate model is shown; Also, in Figure \ref{fig:Anterograde_Interference_Simulation} D and F, you can see the response of Gain-specific model and Single State model. By comparing the time constants of each model (Figure \ref{fig:Anterograde_Interference_Simulation} C, E, and G), results show that only multi-rate model has higher time constant in the initial adaptation; Single state model shows no change of time constant and Gain specific model shows faster time constant for the secondary adaptation. Since we have a bias against the deadaptation, it is expected to have slower time constant in the secondary adaptation in multi-rate model.\\
+\begin{figure}[h!]
+  \centering
+     \includegraphics[width=\linewidth]{figures/Fig6}
+  \caption{\textbf{Anterograde Interference Simulation}\\(A)  Experiment Paradigm. (B, D, F) Raw simulation results of multi-rate model, gain-specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, and 120 initial adaptation trials. (C, E, G) Direct performance comparison of multi-rate model, gain-specific model, and Single State model. In this column, learning curves are shifted and scaled so that the desired performance is one. In this paradigm only the multi-rate model has a higher time constant in the initial adaptation compared to the time constant of de-adaptation; the single state model shows no change in the time constant and the gain-specific model shows a faster time constant for the secondary adaptation. Since we have a bias against the de-adaptation, it is expected to have a slower time constant in the second adaptation in the multi-rate model. And the results show that in the multi-rate model we get a slower time constant by increasing the number of adaptation trials. 
+}
+  \label{fig:Anterograde_Interference_Simulation}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+     \includegraphics[width=\linewidth]{figures/Fig7}
+  \caption{\textbf{Deadaptation Simulation}\\ (A)  Experiment Paradigm. (B, D, F) Raw simulation results of multi-rate model, gain-specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, and 120 initial adaptation trials. (C, E, G) Direct performance comparison of multi-rate model, gain-specific model, and Single State model. In this column, learning curves are shifted and scaled so that the desired performance is one. In this paradigm, the multi-rate model and the gain-specific model show a faster rate of de-adaptation while the single-state model shows no changes in the rate. Also, it can be inferred that by increasing the number of adaptation trials, the rate of de-adaptation decreases. 
+}
+  \label{fig:Deadaptation_Simulation}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+     \includegraphics[width=\linewidth]{figures/Fig8}
+  \caption{\textbf{Down-Scaling Simulation}\\ (A)  Experiment Paradigm. (B, D, F) Raw simulation results of multi-rate model, gain-specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, and 120 initial adaptation trials. (C, E, G) Direct performance comparison of multi-rate model, gain-specific model, and Single State model. In this column, learning curves are shifted and scaled so that the desired performance is one. In this paradigm, the multi-rate model shows the effect of having a faster time constant of adapting to a lower level of previously learned adaptation than de-adaptation to baseline. The gain-specific model shows somehow inverse effect.
+}
+  \label{fig:Down_Scaling_Simulation}
+\end{figure}
 
 
 
-\textbf{Deadaptation Simulation }
-The second stimulus is Deadaptation Simulation which consists of a number of trials (In this case: 30, 60 and 120) as adaptation and then trials back to base line (Figure \ref{fig:Deadaptation_Simulation} A). There are studies reporting that the rate of deadaptation is faster than the rate of initial adaptation [\cite{Wolpert}, \cite{shadmehr_jnp}]. Results show that the multi rate model and the gain specific model show faster rate of deadaptation while the single state model shows no changes in the rate (Figure \ref{fig:Deadaptation_Simulation} C, E, and G). Also it can be inferred that by increasing the number of adaptation trials, the rate of deadaptation decreases.\\
-
-
-\textbf{Down-Scaling Simulation}
-It is reported that the time constant of adapting to a lower level of previously learnt adaptation is faster than deadaptation to baseline. In Figure \ref{fig:Down_Scaling_Simulation} we showed that the multi rate model can explain this effect while the single state model and the gain specific model cannot. It can be seen that the Gain specific model shows somehow inverse effect.
+It’s been reported that an initial motor adaptation has a faster time constant in comparison with subsequent adaptation for the oppositely directed stimulus. [\cite{Bizzi}, \cite{shadmehr_jn}, \cite{Wolpert}] We’ve tested the multi-rate model under different stimuli and the result clearly shows we have a faster time constant for the initial adaptation. 
+The first stimulus is Anterograde interference which consists of a number of trials (In this case: 30, 60, and 120) as adaptation and 50 trials as de-adaptation (Figure \ref{fig:Anterograde_Interference_Simulation} A). In Figure \ref{fig:Anterograde_Interference_Simulation} B, the raw response of the multi-rate model is shown; Also, in Figure \ref{fig:Anterograde_Interference_Simulation} D and F, you can see the response of Gain-specific model and Single State model. By comparing the time constants of each model (Figure \ref{fig:Anterograde_Interference_Simulation} C, E, and G), results show that only the multi-rate model has a higher time constant in the initial adaptation; the single state model shows no change of time constant and gain-specific model shows faster time constant for the secondary adaptation. Since we have a bias against the de-adaptation, it is expected to have a slower time constant in the second adaptation in the multi-rate model.\\
 
 
 
 
+The second stimulus is Deadaptation Simulation which consists of a number of trials (In this case: 30, 60, and 120) as adaptation and then trials back to baseline (Figure \ref{fig:Deadaptation_Simulation} A). There are studies reporting that the rate of de-adaptation is faster than the rate of initial adaptation [\cite{Wolpert}, \cite{shadmehr_jnp}]. Results show that the multi-rate model and the gain-specific model show a faster rate of de-adaptation while the single state model shows no changes in the rate (Figure \ref{fig:Deadaptation_Simulation} C, E, and G). Also, it can be inferred that by increasing the number of adaptation trials, the rate of de-adaptation decreases.\\
 
 
-A key feature of the multi-rate model is its ability to predict the spontaneous recovery. Figure \ref{fig:saving} only shows spontaneous recovery for
+It is reported that the time constant of adapting to a lower level of previously learned adaptation is faster than de-adaptation to baseline. In Figure \ref{fig:Down_Scaling_Simulation} we showed that the multi-rate model can explain this effect while the single state model and the gain-specific model cannot. It can be seen that somehow, the gain-specific model shows an inverse effect.\\
+
+
+
+
+
+
+A key feature of the multi-rate model is its ability to predict spontaneous recovery. Figure \ref{fig:saving} only shows spontaneous recovery for
 specific sets of model parameters, however spontaneous recovery is a general feature of this
 model over a very wide space of model parameters. Because an analytical approach to
 demonstrating this property is difficult, we performed a large set of simulations in which the
-model parameters where systematically varied (by as much as a factor of 10). In these simulations the fractional spontaneous
+model parameters were systematically varied (by as much as a factor of 10). In these simulations, the fractional spontaneous
 recovery (max rebound/max initial learning) was assessed following asymptotic learning and
 unlearning to baseline. The results of these simulations are shown in Figure \ref{fig:mutli_rate_params}. There are four
 parameters in the multi-rate model and each panel below displays the amount of
@@ -134,39 +161,13 @@ more than 80\% of the parameter space shown displays a spontaneous recovery of g
 than 20\%, where the amount of spontaneous recovery refers to the ratio of the maximum
 recovery in the error clamp phase to the asymptotic amount of learning during the initial
 learning phase. These simulations show that spontaneous recovery is a robust feature of
-the multi-rate model in this experimental paradigm, and that the finding of spontaneous
-recovery does not depend upon a narrow choice of parameter values.
-
-\begin{figure}[h!]
-  \centering
-     \includegraphics[width=\linewidth]{figures/Fig6}
-  \caption{\textbf{Anterograde Interference Simulation}\\(A)  Experiment Paradigm. (B, D, F) Raw simulation results of Multi Rate model, Gain Specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, 120 initial adaptation trials. (C, E, G) Direct performance comparison of Multi Rate model, Gain Specific model, and Single State model. In this column learning curves are shifted and scaled so that the desired performance is one. In this paradigm only multi-rate model has higher time constant in the initial adaptation comparing to the time constant of deadaptation; Single state model shows no change of time constant and Gain specific model shows faster time constant for the secondary adaptation. Since we have a bias against the deadaptation, it is expected to have slower time constant in the secondary adaptation in multi-rate model. And the results show that in multi rate model we get slower time constant by increasing the number of adaptation trials. 
-}
-  \label{fig:Anterograde_Interference_Simulation}
-\end{figure}
-
-
-\begin{figure}[h!]
-  \centering
-     \includegraphics[width=\linewidth]{figures/Fig7}
-  \caption{\textbf{Deadaptation Simulation}\\ (A)  Experiment Paradigm. (B, D, F) Raw simulation results of Multi Rate model, Gain Specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, 120 initial adaptation trials. (C, E, G) Direct performance comparison of Multi Rate model, Gain Specific model, and Single State model. In this column learning curves are shifted and scaled so that the desired performance is one. In this paradigm the multi rate model and the gain specific model show faster rate of deadaptation while the single state model shows no changes in the rate. Also it can be inferred that by increasing the number of adaptation trials, the rate of deadaptation decreases. 
-}
-  \label{fig:Deadaptation_Simulation}
-\end{figure}
-
-
-\begin{figure}[h!]
-  \centering
-     \includegraphics[width=\linewidth]{figures/Fig8}
-  \caption{\textbf{Down-Scaling Simulation}\\ (A)  Experiment Paradigm. (B, D, F) Raw simulation results of Multi Rate model, Gain Specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, 120 initial adaptation trials. (C, E, G) Direct performance comparison of Multi Rate model, Gain Specific model, and Single State model. In this column learning curves are shifted and scaled so that the desired performance is one. In this paradigm the multi rate model shows the effect of having faster time constant of adapting to a lower level of previously learnt adaptation than deadaptation to baseline. The Gain specific model shows somehow inverse effect.
-}
-  \label{fig:Down_Scaling_Simulation}
-\end{figure}
+the multi-rate model in this experimental paradigm and that the finding of spontaneous
+recovery does not depend upon a narrow choice of parameter values.\\
 
 
 
+As Shadmeher et al. stated (\cite{mem_error}), The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is called the error-sensitivity. They assumed the action $u(n)$ to be zero. So, the model becomes:
 
-As Shadmeher et al. stated in their paper (\cite{mem_error}), The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is error-sensitivity parameter. They assumed the action $u(n)$ to be zero. So, the model becomes:
 
 \begin{eqnarray*}
 & e^{(n)} = x^{(n)}-\hat{x}^{(n)}\\
@@ -181,7 +182,7 @@ where  each basis element $g_i$ has a preferred error $e^\smallsmile$ and:
 On trial $n-1$ the motor command $u(n-1)$ produces an error $e(n-1)$ , the nervous system learns from this error and produces motor command $u (n)$ on the subsequent trial, resulting in $e(n)$ . In a slowly switching environment (Figure \ref{fig:herzfeld} A), $e(n)$ has the same sign as $e(n-1)$ . In this case, error-sensitivity should increase around $e(n-1)$ On the other hand, in a rapidly switching environment (\ref{fig:herzfeld} A), $e(n)$ has a different sign than $e(n-1)$ . In this case, error-sensitivity should decrease:
 
 \begin{eqnarray*}
-& \omega^{(n+1)} =omega^{(n)}+\beta sign(e^{(n-1)}e^{(n)}) \frac{g(e^{(n-1)})}{g^T(e^{(n-1)})g(e^{(n-1)})}\\
+& \omega^{(n+1)} = \omega^{(n)}+\beta sign(e^{(n-1)}e^{(n)}) \frac{g(e^{(n-1)})}{g^T(e^{(n-1)})g(e^{(n-1)})}\\
 &g_i(e^{(n)}) = exp(\frac{-(e^{(n)}-{e^\smallsmile}_i)^2}{2\sigma^2})
 \end{eqnarray*}
 
@@ -200,7 +201,7 @@ We used specific learning rates and formulas below for obtaining the output of t
 
 For all of the figures, parameters of the single-state and gain-specific models are set as $A=0.99$, $B=0.013$ and for the multi-rate are set as $A_f = 0.92$, $A_s = 0.996$, $B_f = 0.03$, and $B_s = 0.004$. Also, as shown in Figure \ref{fig:mutli_rate_params}, the qualitative results that are described in the text do not depend on these particular parameter values; they hold as long as all parameters are positive, and $B_f$ is several-fold larger than $B_s$, and $A_s$ is several times closer to one than $A_f$.
 
-The number of washout trials was varied from 0 to 300, and the percent savings was computed for each simulation as the performance improvement on trial 30 of the relearning block versus trial 30 of the initial learning block. All of the simulations were done using Matlab.
+The number of washout trials varied from 0 to 300, and the percent savings was computed for each simulation as the performance improvement on trial 30 of the re-learning block versus trial 30 of the initial learning block. All of the simulations were done using Matlab.
 
 \begin{figure}[h!]
   \centering
@@ -223,7 +224,7 @@ The number of washout trials was varied from 0 to 300, and the percent savings w
     \includegraphics[width=\linewidth]{figures/figure5/Bf_Bs}
   \end{subfigure}
   \caption{\textbf{Simulation of the effects of different learning rates and forgetting factors on the amount of the spontaneous rebound predicted by the multi-rate model}\\
-  All of the plots show value of the spontaneous rebound vs different parameters of the multi-rate model. default value of the parameters is: $A_f=0.92$, $A_s=0.996$, $B_f=0.03$, and $B_s=0.004$. The amount of the spontaneous rebound is measured as ratio of maximum recovery in the error-clamp phase to the asymptotic amount of learning during the initial learning phase. 
+ All of the plots show the value of the spontaneous rebound vs different parameters of the multi-rate model. default value of the parameters is: $A_f=0.92$, $A_s=0.996$, $B_f=0.03$, and $B_s=0.004$. The amount of the spontaneous rebound is measured as the ratio of maximum recovery in the error-clamp phase to the asymptotic amount of learning during the initial learning phase. 
 }
   \label{fig:mutli_rate_params}
 \end{figure}
@@ -234,18 +235,10 @@ The number of washout trials was varied from 0 to 300, and the percent savings w
   \centering
     \includegraphics[width=\linewidth]{figures/figure4/Fig}
   \caption{\textbf{Herzfeld Theoretical model}\\
-  {(A)} presents model performance for slow, medium, and rapidly switching environments (gray line represents $\hat{x}^{(n)}$. {(B)} shows the error-sensivity value over the trials for different values of Z. Z is the speed of switching of the environment. Bigger error-sensivity values lead to less learning from the error, so model learns more from slow switching environments in comparison with rapidly switching environments.
+  {(A)} presents model performance for slow, medium, and rapidly switching environments (gray line represents $\hat{x}^{(n)}$. {(B)} shows the error-sensitivity value over the trials for different values of Z. Z is the speed of switching of the environment. Bigger error-sensitivity values lead to less learning from the error, so the model learns more from slow switching environments in comparison with rapidly switching environments.
 }
   \label{fig:herzfeld}
 \end{figure}
-
-
-
-
-
-
-
-
 
 
 
@@ -257,7 +250,6 @@ The number of washout trials was varied from 0 to 300, and the percent savings w
 
 \acknow{We highly appreciate ... }
 
-\showacknow{} % Display the acknowledgments section
 
 \section*{References}
 % Bibliography
