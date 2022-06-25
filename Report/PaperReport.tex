@@ -14,18 +14,18 @@
 % Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 \author[a]{MohammadAmin Alamalhoda}
 \author[a]{Arsalan Firoozi} 
-\author[a]{Mehran khorshidi}
+\author[a]{Mohammad khorshidi}
 \affil[a]{Student, EE Department, Sharif University of Technology}
 
 % Please add here a significance statement to explain the relevance of your work
-\significancestatement{Hmmmmm}
+\significancestatement{Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is introduced where demonstrate that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system makes the surprising prediction of spontaneous recovery (or adaptation rebound) if error feedback is clamped at zero following an adaptation-extinction training episode.}
 
 % Please include corresponding author, author contribution and author declaration information
 \authorcontributions{Author contributions}
 \equalauthors{\textsuperscript{1}All contributed equally to this work}
 
 % Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
-\keywords{Motor learning} 
+\keywords{Motor learning } 
 
 \begin{abstract}
 Abstract
@@ -49,8 +49,8 @@ Abstract
 Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows savings in eye saccade adaptation. The progress of motor output in learn-unlearn-relearn paradigms with three different models is simulated. Models are (1) a single-state, single time-constant model, (2) a two-state, gain- specific model, and (3) a two-state, gain-independent, multi- rate model. All of these models give motor output as a function of current motor state and the error of last trial. The learning rules for these models are:
 
 \begin{eqnarray*}
-& (1)\;Single\;State\;Model:\\
-& x(n+1) = Ax(n)+Be(n)\\
+& (1)\;Single\;State:\\
+& x(n+1) = Ax(n)+Be(n)
 \end{eqnarray*}
 
 \begin{eqnarray*}
@@ -74,6 +74,33 @@ slow state is already biased towards relearning, making relearning more dependen
 
 
 
+\begin{figure*}[h!]
+  \centering
+    \includegraphics[width=\linewidth]{figures/figure1/Fig}
+  \caption{\textbf{Simulations of Motor Adaptation Experiments That Show Savings}\\
+  (A) shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. (B) shows a direct comparison of simulated performance in the initial learning and relearning blocks.  (C) shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the relearning block compared to the 30th trial in the initial learning block. 
+}
+  \label{fig:saving}
+\end{figure*}
+
+
+\textbf{Anterograde Interference Simulation}
+It’s been reported that an initial motor adaptation has faster time constant in comparison with subsequent adaptation for the oppositely directed stimulus. [\cite{Bizzi}, \cite{shadmehr_jn}, \cite{Wolpert}] We’ve tested the multi-rate model under different stimuli and the result clearly shows we have faster time constant for the initial adaptation. 
+The first stimulus is Anterograde interference which consists of a number of trials (In this case: 30, 60 and 120) as adaptation and 50 trials as deadaptation (Figure \ref{fig:Anterograde_Interference_Simulation} A). In Figure \ref{fig:Anterograde_Interference_Simulation} B, the raw response of multi-rate model is shown; Also, in Figure \ref{fig:Anterograde_Interference_Simulation} D and F, you can see the response of Gain-specific model and Single State model. By comparing the time constants of each model (Figure \ref{fig:Anterograde_Interference_Simulation} C, E, and G), results show that only multi-rate model has higher time constant in the initial adaptation; Single state model shows no change of time constant and Gain specific model shows faster time constant for the secondary adaptation. Since we have a bias against the deadaptation, it is expected to have slower time constant in the secondary adaptation in multi-rate model.\\
+
+
+
+\textbf{Deadaptation Simulation }
+The second stimulus is Deadaptation Simulation which consists of a number of trials (In this case: 30, 60 and 120) as adaptation and then trials back to base line (Figure \ref{fig:Deadaptation_Simulation} A). There are studies reporting that the rate of deadaptation is faster than the rate of initial adaptation [\cite{Wolpert}, \cite{shadmehr_jnp}]. Results show that the multi rate model and the gain specific model show faster rate of deadaptation while the single state model shows no changes in the rate (Figure \ref{fig:Deadaptation_Simulation} C, E, and G). Also it can be inferred that by increasing the number of adaptation trials, the rate of deadaptation decreases.\\
+
+
+\textbf{Down-Scaling Simulation}
+It is reported that the time constant of adapting to a lower level of previously learnt adaptation is faster than deadaptation to baseline. In Figure \ref{fig:Down_Scaling_Simulation} we showed that the multi rate model can explain this effect while the single state model and the gain specific model cannot. It can be seen that the Gain specific model shows somehow inverse effect.
+
+
+
+
+
 \textbf{Robustness of spontaneous rebound in the multi-rate model}\\
 A key feature of the multi-rate model is its ability to predict the spontaneous recovery. Figure \ref{fig:multi_rate_recovery} only shows spontaneous recovery for
 specific sets of model parameters, however spontaneous recovery is a general feature of this
@@ -90,76 +117,83 @@ than 20\%, where the amount of spontaneous recovery refers to the ratio of the m
 recovery in the error clamp phase to the asymptotic amount of learning during the initial
 learning phase. These simulations show that spontaneous recovery is a robust feature of
 the multi-rate model in this experimental paradigm, and that the finding of spontaneous
-recovery does not depend upon a narrow choice of parameter values.\\
+recovery does not depend upon a narrow choice of parameter values.
+
+\begin{figure}[h!]
+  \centering
+     \includegraphics[width=\linewidth]{figures/Fig6}
+  \caption{\textbf{Anterograde Interference Simulation}\\(A)  Experiment Paradigm. (B, D, F) Raw simulation results of Multi Rate model, Gain Specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, 120 initial adaptation trials. (C, E, G) Direct performance comparison of Multi Rate model, Gain Specific model, and Single State model. In this column learning curves are shifted and scaled so that the desired performance is one. In this paradigm only multi-rate model has higher time constant in the initial adaptation comparing to the time constant of deadaptation; Single state model shows no change of time constant and Gain specific model shows faster time constant for the secondary adaptation. Since we have a bias against the deadaptation, it is expected to have slower time constant in the secondary adaptation in multi-rate model. And the results show that in multi rate model we get slower time constant by increasing the number of adaptation trials. 
+}
+  \label{fig:Anterograde_Interference_Simulation}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+     \includegraphics[width=\linewidth]{figures/Fig7}
+  \caption{\textbf{Deadaptation Simulation}\\ (A)  Experiment Paradigm. (B, D, F) Raw simulation results of Multi Rate model, Gain Specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, 120 initial adaptation trials. (C, E, G) Direct performance comparison of Multi Rate model, Gain Specific model, and Single State model. In this column learning curves are shifted and scaled so that the desired performance is one. In this paradigm the multi rate model and the gain specific model show faster rate of deadaptation while the single state model shows no changes in the rate. Also it can be inferred that by increasing the number of adaptation trials, the rate of deadaptation decreases. 
+}
+  \label{fig:Deadaptation_Simulation}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+     \includegraphics[width=\linewidth]{figures/Fig8}
+  \caption{\textbf{Down-Scaling Simulation}\\ (A)  Experiment Paradigm. (B, D, F) Raw simulation results of Multi Rate model, Gain Specific model, and Single State model. Blue: initial adaptation. Red, Green, Cyan: secondary adaptation after 30, 60, 120 initial adaptation trials. (C, E, G) Direct performance comparison of Multi Rate model, Gain Specific model, and Single State model. In this column learning curves are shifted and scaled so that the desired performance is one. In this paradigm the multi rate model shows the effect of having faster time constant of adapting to a lower level of previously learnt adaptation than deadaptation to baseline. The Gain specific model shows somehow inverse effect.
+}
+  \label{fig:Down_Scaling_Simulation}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
 
 \textbf{Memory of errors}\\
 
-As Shadmeher et al. stated in their paper(\cite{mem_of_error}), The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is error-sensitivity parameter. They assumed the action $u(n)$ to be zeroSo, the model becomes:
+As Shadmeher et al. stated in their paper (\cite{mem_error}), The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is error-sensitivity parameter. They assumed the action $u(n)$ to be zero.So, the model becomes:
 
 \begin{eqnarray*}
-& e(n) = x_n-\hat{x}_n\\
+& e^{(n)} = x^{(n)}-\hat{x}^{(n)}\\
 & \hat{x}_{n+1} = \alpha \hat{x}_n + \eta_ne_n
 \end{eqnarray*}
-where
+where  each basis element $g_i$ has a preferred error $e^\smallsmile$ and:
 \begin{eqnarray*}
 & \eta(e^{(n)}) = \sum_i^N \omega_ig_i(e^{(n)})\\
-&g_i(e^{(n)}) = exp(\frac{-(e^{(n)}-{e^\smallsmile}_i)^2}{2\sigma^2})
+&g_i(e^{(n)}) = e^{\frac{-(e^{(n)}-{e^\smallsmile}_i)^2}{2\sigma^2}}
 \end{eqnarray*}
 
-
-On trial $n-1$ the motor command $u(n-1)$ produces an error $e(n-1)$ , as illustrated in the top part of Fig. ---. The nervous system learns from this error and produces motor command $u (n)$ on the subsequent trial, resulting in $e(n)$ . In a slowly switching environment (top part of Fig. ---), $e(n)$ has the same sign as $e(n-1)$ . In this case, error-sensitivity should increase around $e(n-1)$ (Fig. ---). On the other hand, in a rapidly switching environment (Fig. ---), $e(n)$ has a different sign than $e(n-1)$ . In this case, error-sensitivity should decrease:
+On trial $n-1$ the motor command $u(n-1)$ produces an error $e(n-1)$ , the nervous system learns from this error and produces motor command $u (n)$ on the subsequent trial, resulting in $e(n)$ . In a slowly switching environment (Figure \ref{fig:herzfeld} A), $e(n)$ has the same sign as $e(n-1)$ . In this case, error-sensitivity should increase around $e(n-1)$ On the other hand, in a rapidly switching environment (\ref{fig:herzfeld} A), $e(n)$ has a different sign than $e(n-1)$ . In this case, error-sensitivity should decrease:
 
 \begin{eqnarray*}
 & \omega^{(n+1)} =omega^{(n)}+\beta sign(e^{(n-1)}e^{(n)}) \frac{g(e^{(n-1)})}{g^T(e^{(n-1)})g(e^{(n-1)})}\\
 &g_i(e^{(n)}) = exp(\frac{-(e^{(n)}-{e^\smallsmile}_i)^2}{2\sigma^2})
 \end{eqnarray*}
 
-We have simulated this model and the results are shown in Figure \ref{fig:herzfeld}
+We have simulated this model and the results are shown in Figure \ref{fig:herzfeld}. Also the relation between the speed of changes in environment with error-sensivity is plotted shown in Figure \ref{fig:herzfeld} B. 
 
+\section*{Material and Method}
+We used specific learning rates and formulas below for obtaining the output of the models stated in the text.
 
+\begin{eqnarray*}
+& perturbation\;trials : e(n)=f(n)-x(n)\\
+& error-clamp trials : e(n) = 0\\
+& e(n) = error\;on\;trial\;n\\
+& x(n) = adapted\;motor\;output\;on\;trial\;n\\
+& f(n) = disturbance\;on\;trial\;n
+\end{eqnarray*}
 
+For all of the figures, parameters of the single-state and gain-specific models are set as $A=0.99$, $B=0.013$ and for the multi-rate are set as $A_f = 0.92$, $A_s = 0.996$, $B_f = 0.03$, and $B_s = 0.004$. Also, as shown in Figure \ref{fig:mutli_rate_params}, the qualitative results that are described in the text do not depend on these particular parameter values; they hold as long as all parameters are positive, and $B_f$ is several-fold larger than $B_s$, and $A_s$ is several times closer to one than $A_f$.
 
-\begin{figure*}[h!]
-  \centering
-  \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/single_state_adaptation}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/gain_specific_adaptation}
-  \end{subfigure}
-   \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/multi_rate_adaptation}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/single_state_relearning}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/gain_specific_relearning}
-  \end{subfigure}
-   \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/multi_rate_relearning}
-  \end{subfigure}
-      \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/single_state_saving}
-    \caption{Single State}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/gain_specific_saving}
-        \caption{Gain Specific}
-  \end{subfigure}
-   \begin{subfigure}[b]{0.32\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure1/multi_rate_saving}
-        \caption{Multi Rate}
-  \end{subfigure}
-  \caption{\textbf{Simulations of Motor Adaptation Experiments That Show Savings}\\
-  {First row} shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. {Second row} shows a direct comparison of simulated performance in the initial learning and relearning blocks.  {Third row} shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the relearning block compared to the 30th trial in the initial learning block. 
-}
-  \label{fig:saving}
-\end{figure*}
+The number of washout trials was varied from 0 to 300, and the percent savings was computed for each simulation as the performance improvement on trial 30 of the relearning block versus trial 30 of the initial learning block. All of the simulations were done using Matlab.
 
-
-
-\begin{figure*}[h!]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.32\linewidth}
     \includegraphics[width=\linewidth]{figures/figure5/Af_AS}
@@ -183,28 +217,31 @@ We have simulated this model and the results are shown in Figure \ref{fig:herzfe
   All of the plots show value of the spontaneous rebound vs different parameters of the multi-rate model. default value of the parameters is: $A_f=0.92$, $A_s=0.996$, $B_f=0.03$, and $B_s=0.004$. The amount of the spontaneous rebound is measured as ratio of maximum recovery in the error-clamp phase to the asymptotic amount of learning during the initial learning phase. 
 }
   \label{fig:mutli_rate_params}
-\end{figure*}
+\end{figure}
 
 
-\begin{figure*}[h!]
+
+\begin{figure}[h!]
   \centering
-  \begin{subfigure}[b]{0.9\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure4/z0_1}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.9\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure4/z0_5}
-  \end{subfigure}
-   \begin{subfigure}[b]{0.9\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure4/z0_9}
-  \end{subfigure}
-    \begin{subfigure}[b]{0.9\linewidth}
-    \includegraphics[width=\linewidth]{figures/figure4/erros_sensivity}
-  \end{subfigure}
+    \includegraphics[width=\linewidth]{figures/figure4/Fig}
   \caption{\textbf{Herzfeld Theoretical model}\\
-  {First three rows} presents model performance for slow, medium, and rapidly switching environments (gray line represents $\hat{x}^{(n)}$. {Forth row} shows the error-sensivity value over the trials for different values of Z. Bigger error-sensivity values lead to less learning from the error, so model learns more from slow switching environments in comparison with rapidly switching environments.
+  {(A)} presents model performance for slow, medium, and rapidly switching environments (gray line represents $\hat{x}^{(n)}$. {(B)} shows the error-sensivity value over the trials for different values of Z. Z is the speed of switching of the environment. Bigger error-sensivity values lead to less learning from the error, so model learns more from slow switching environments in comparison with rapidly switching environments.
 }
   \label{fig:herzfeld}
-\end{figure*}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage
@@ -215,7 +252,7 @@ We have simulated this model and the results are shown in Figure \ref{fig:herzfe
 
 \section*{References}
 % Bibliography
-\bibliography{references}
+\bibliography{References}
 
 \bigskip
 \begin{center}

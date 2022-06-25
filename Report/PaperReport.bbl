@@ -1,0 +1,36 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Brashers-Krug T, Shadmehr R, Bizzi E}(1996)]{Bizzi}
+{Brashers-Krug T, Shadmehr R, Bizzi E}.
+\newblock {\textbf{Consolidation in human motor memory}}.
+\newblock \emph{Nature}, 1996.
+
+\bibitem[{Thoroughman KA, Shadmehr R}(1999)]{shadmehr_jn}
+{Thoroughman KA, Shadmehr R}.
+\newblock {\textbf{Electromyographic correlates of learning an internal model
+  of reaching movements}}.
+\newblock \emph{Journal of Neuroscience}, 1999.
+
+\bibitem[{Davidson PR, Wolpert DM}(2004)]{Wolpert}
+{Davidson PR, Wolpert DM}.
+\newblock {\textbf{Scaling down motor memories: De-adaptation after motor
+  learning}}.
+\newblock \emph{Neuroscience Letter}, 2004.
+
+\bibitem[{Shadmehr R, Brandt J, Corkin S}(1998)]{shadmehr_jnp}
+{Shadmehr R, Brandt J, Corkin S}.
+\newblock {\textbf{Time-dependent motor memory processes in amnesic subjects}}.
+\newblock \emph{Journal of Neurophysiology}, 1998.
+
+\bibitem[{David J. Herzfeld, Pavan A. Vaswani, Mollie Marko, Reza
+  Shadmehr}(2014)]{mem_error}
+{David J. Herzfeld, Pavan A. Vaswani, Mollie Marko, Reza Shadmehr}.
+\newblock {\textbf{A memory of errors in sensorimotor learning}}.
+\newblock \emph{ScienceXpress}, 2014.
+
+\end{thebibliography}
