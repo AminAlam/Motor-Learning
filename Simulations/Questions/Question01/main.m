@@ -59,6 +59,9 @@ plot(1:num_trials, x, 'r', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
     'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
+
+xlabel('Trial Number')
+ylabel('Adaptation')
 %% Gain Specific Model
 clc
 close all
@@ -102,6 +105,8 @@ plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
     'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
 
+xlabel('Trial Number')
+ylabel('Adaptation')
 %% Multi-Rate Model
 clc
 close all
@@ -145,6 +150,8 @@ plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
     'Disturbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
 
+xlabel('Trial Number')
+ylabel('Adaptation')
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% re-learning
 % Single-State Model
 clc
@@ -187,6 +194,9 @@ plot(1:num_trials, x, 'r', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'washout trials',...
     'readaptation trials', 'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
+
+xlabel('Trial Number')
+ylabel('Adaptation')
 %% Gain Specific Model
 clc
 close all
@@ -235,6 +245,8 @@ plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 legend('adaptation trials', 'deadaptation trials', 'washout trials',...
     'readaptation trials', 'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
 
+xlabel('Trial Number')
+ylabel('Adaptation')
 %% Multi-Rate Model
 clc
 close all
@@ -282,3 +294,6 @@ plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'washout trials',...
     'readaptation trials', 'Disturbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
+
+xlabel('Trial Number')
+ylabel('Adaptation')
