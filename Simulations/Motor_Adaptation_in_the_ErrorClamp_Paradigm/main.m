@@ -59,9 +59,6 @@ plot(1:num_trials, x, 'r', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
     'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
-
-plot_disturbance(f, num_trials, deadaptation_trials)
-plot(1:num_trials, x, 'r', 'LineWidth', 2)
 %% Gain Specific Model
 clc
 close all
@@ -104,7 +101,6 @@ plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
     'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
-
 %% Multi-Rate Model
 clc
 close all
@@ -147,7 +143,6 @@ plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
     'Disturbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
-
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% re-learning
 % Single-State Model
 clc
@@ -179,17 +174,17 @@ box = [deadaptation_trials(1) deadaptation_trials(1)...
         deadaptation_trials(end) deadaptation_trials(end)];
 patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
-        num_trials num_trials];
+        washout_trials(end)-1 washout_trials(end)-1];
 patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [num_trials num_trials ...
+        washout_trials(end) washout_trials(end)];
+patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 
 legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
-    'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
-
-plot_disturbance(f, num_trials, deadaptation_trials)
-plot(1:num_trials, x, 'r', 'LineWidth', 2)
+    'readaptation trials', 'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
 %% Gain Specific Model
 clc
 close all
