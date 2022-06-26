@@ -95,6 +95,20 @@ figure
 plot(num_washout_trials, saving_mat, 'b', 'LineWidth', 2)
 ylim([-5 100])
 
+figure(1)
+xlabel('Trial Number')
+ylabel('Adaptation')
+save_figure('../../Report/figures/figure1/single_state_adaptation')
+
+figure(2)
+xlabel('Trial Number')
+ylabel('Adaptation')
+save_figure('../../Report/figures/figure1/single_state_relearning')
+
+figure(3)
+xlabel('Number of Washout Trials')
+ylabel('% Saving')
+save_figure('../../Report/figures/figure1/single_state_saving')
 %% Gain Specific Model
 clc
 close all
@@ -177,6 +191,21 @@ end
 figure
 plot(num_washout_trials, saving_mat, 'b', 'LineWidth', 2)
 ylim([-5 100])
+
+figure(1)
+xlabel('Trial Number')
+ylabel('Adaptation')
+save_figure('../../Report/figures/figure1/gain_specific_adaptation')
+
+figure(2)
+xlabel('Trial Number')
+ylabel('Adaptation')
+save_figure('../../Report/figures/figure1/gain_specific_relearning')
+
+figure(3)
+xlabel('Number of Washout Trials')
+ylabel('% Saving')
+save_figure('../../Report/figures/figure1/gain_specific_saving')
 %% Multi-Rate Model
 clc
 close all
@@ -261,3 +290,18 @@ end
 figure
 plot(num_washout_trials, saving_mat, 'b', 'LineWidth', 2)
 ylim([-5 100])
+
+figure(1)
+xlabel('Trial Number')
+ylabel('Adaptation')
+save_figure('../../Report/figures/figure1/multi_rate_adaptation')
+
+figure(2)
+xlabel('Trial Number')
+ylabel('Adaptation')
+save_figure('../../Report/figures/figure1/multi_rate_relearning')
+
+figure(3)
+xlabel('Number of Washout Trials')
+ylabel('% Saving')
+save_figure('../../Report/figures/figure1/multi_rate_saving')

@@ -32,7 +32,6 @@ washout_trials = deadaptation_trials(end):num_trials;
 f = make_disturbance(num_trials, deadaptation_trials, washout_trials,...
                     length_initial_zeros);
 
-
 rebound_mat = zeros(length(Af_list), length(As_list), length(Bf_list), length(Bs_list));
 Af_counter = 0;
 for Af = Af_list
@@ -73,6 +72,9 @@ set(gca,'YDir','normal')
 c = colorbar;
 c.Label.String = 'Rebound';
 caxis([0, 0.8])
+
+title('A_f vs A_s')
+save_figure('../../../Report/figures/figure5/Af_AS')
 %% Bf vs Bs
 figure
 imagesc(Bf_list, Bs_list, squeeze(rebound_mat(1,1,2:end,2:end)))
@@ -82,6 +84,9 @@ set(gca,'YDir','normal')
 c = colorbar;
 c.Label.String = 'Rebound';
 caxis([0, 0.4])
+
+title('B_f vs B_s')
+save_figure('../../../Report/figures/figure5/Bf_Bs')
 %% Af vs Bf
 figure
 imagesc(Af_list, Bf_list, squeeze(rebound_mat(2:end,1,2:end,1)))
@@ -91,6 +96,9 @@ set(gca,'YDir','normal')
 c = colorbar;
 c.Label.String = 'Rebound';
 caxis([0, 0.7])
+
+title('A_f vs B_f')
+save_figure('../../../Report/figures/figure5/Af_Bf')
 %% As vs Bs
 figure
 imagesc(As_list, Bs_list, squeeze(rebound_mat(1,2:end,1,2:end)))
@@ -100,6 +108,9 @@ set(gca,'YDir','normal')
 c = colorbar;
 c.Label.String = 'Rebound';
 caxis([0, 0.7])
+
+title('A_s vs B_s')
+save_figure('../../../Report/figures/figure5/As_Bs')
 %% Af vs Bs
 figure
 imagesc(Af_list, Bs_list, squeeze(rebound_mat(2:end,1,1,2:end)))
@@ -109,6 +120,9 @@ set(gca,'YDir','normal')
 c = colorbar;
 c.Label.String = 'Rebound';
 caxis([0, 0.7])
+
+title('A_f vs B_s')
+save_figure('../../../Report/figures/figure5/Af_Bs')
 %% As vs Bf
 figure
 imagesc(As_list, Bf_list, squeeze(rebound_mat(1,2:end,2:end,1)))
@@ -118,3 +132,6 @@ set(gca,'YDir','normal')
 c = colorbar;
 c.Label.String = 'Rebound';
 caxis([0, 0.7])
+
+title('A_f vs B_f')
+save_figure('../../../Report/figures/figure5/As_Bf')

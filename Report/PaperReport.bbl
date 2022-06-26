@@ -1,0 +1,72 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Maurice A. Smith, Ali Ghazizadeh, Reza Shadmehr}(2006)]{main_paper}
+{Maurice A. Smith, Ali Ghazizadeh, Reza Shadmehr}.
+\newblock {\textbf{Interacting Adaptive Processes with Different Timescales
+  Underlie Short-Term Motor Learning}}.
+\newblock \emph{PLoS BIOLOGY}, 2006.
+
+\bibitem[{Kojima Y, Iwamoto Y, Yoshida K}(2004)]{Kojima}
+{Kojima Y, Iwamoto Y, Yoshida K}.
+\newblock {\textbf{Memory of learning facilitates saccadic adaptation in the
+  monkey}}.
+\newblock \emph{Journal of Neuroscience}, 2004.
+
+\bibitem[{Scheidt RA, Dingwell JB, Mussa-Ivaldi FA}(2001)]{Scheidt}
+{Scheidt RA, Dingwell JB, Mussa-Ivaldi FA}.
+\newblock {\textbf{Learning to move amid uncertainty}}.
+\newblock \emph{Journal of Neurophysiology}, 2001.
+
+\bibitem[{Baddeley RJ, Ingram HA, Miall RC}(2003)]{Baddeley}
+{Baddeley RJ, Ingram HA, Miall RC}.
+\newblock {\textbf{System identification applied to a visuomotor task:
+  Near-optimal human performance in a noisy changing task}}.
+\newblock \emph{Journal of Neuroscience}, 2003.
+
+\bibitem[{Thoroughman KA, Shadmehr R}(2000)]{Thoroughman}
+{Thoroughman KA, Shadmehr R}.
+\newblock {\textbf{Learning of action through adaptive combination of motor
+  primitives}}.
+\newblock \emph{Nature}, 2000.
+
+\bibitem[{Donchin O, Francis JT, Shadmehr R}(2003)]{Donchin}
+{Donchin O, Francis JT, Shadmehr R}.
+\newblock {\textbf{Quantifying generalization from trial-by-trial behavior of
+  adaptive systems that learn with basis functions: Theory and experiments in
+  human motor control}}.
+\newblock \emph{Journal of Neuroscience}, 2003.
+
+\bibitem[{Brashers-Krug T, Shadmehr R, Bizzi E}(1996)]{Bizzi}
+{Brashers-Krug T, Shadmehr R, Bizzi E}.
+\newblock {\textbf{Consolidation in human motor memory}}.
+\newblock \emph{Nature}, 1996.
+
+\bibitem[{Thoroughman KA, Shadmehr R}(1999)]{shadmehr_jn}
+{Thoroughman KA, Shadmehr R}.
+\newblock {\textbf{Electromyographic correlates of learning an internal model
+  of reaching movements}}.
+\newblock \emph{Journal of Neuroscience}, 1999.
+
+\bibitem[{Davidson PR, Wolpert DM}(2004)]{Wolpert}
+{Davidson PR, Wolpert DM}.
+\newblock {\textbf{Scaling down motor memories: De-adaptation after motor
+  learning}}.
+\newblock \emph{Neuroscience Letter}, 2004.
+
+\bibitem[{Shadmehr R, Brandt J, Corkin S}(1998)]{shadmehr_jnp}
+{Shadmehr R, Brandt J, Corkin S}.
+\newblock {\textbf{Time-dependent motor memory processes in amnesic subjects}}.
+\newblock \emph{Journal of Neurophysiology}, 1998.
+
+\bibitem[{David J. Herzfeld, Pavan A. Vaswani, Mollie Marko, Reza
+  Shadmehr}(2014)]{mem_error}
+{David J. Herzfeld, Pavan A. Vaswani, Mollie Marko, Reza Shadmehr}.
+\newblock {\textbf{A memory of errors in sensorimotor learning}}.
+\newblock \emph{ScienceXpress}, 2014.
+
+\end{thebibliography}

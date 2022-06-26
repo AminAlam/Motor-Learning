@@ -52,16 +52,18 @@ box = [deadaptation_trials(1) deadaptation_trials(1)...
 patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
         num_trials num_trials];
-patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'w','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 
-legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
+legend('adaptation trials', 'deadaptation trials', 'washout trials',...
     'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
 
-plot_disturbance(f, num_trials, deadaptation_trials)
-plot(1:num_trials, x, 'r', 'LineWidth', 2)
+xlabel('Trial Number')
+ylabel('Adaptation')
+
+save_figure('../../../Report/figures/figure3/single_state')
 %% Gain Specific Model
 clc
 close all
@@ -95,16 +97,20 @@ box = [deadaptation_trials(1) deadaptation_trials(1)...
 patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
         num_trials num_trials];
-patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'w','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 plot(1:num_trials, x1, '--g', 'LineWidth', 2)
 plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
-legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
+legend('adaptation trials', 'deadaptation trials', 'washout trials',...
     'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
 
+xlabel('Trial Number')
+ylabel('Adaptation')
+
+save_figure('../../../Report/figures/figure3/gain_specific')
 %% Multi-Rate Model
 clc
 close all
@@ -138,16 +144,20 @@ box = [deadaptation_trials(1) deadaptation_trials(1)...
 patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
         num_trials num_trials];
-patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'w','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 plot(1:num_trials, x1, '--g', 'LineWidth', 2)
 plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
-legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
+legend('adaptation trials', 'deadaptation trials', 'washout trials',...
     'Disturbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
 
+xlabel('Trial Number')
+ylabel('Adaptation')
+
+save_figure('../../../Report/figures/figure3/multi_rate')
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% re-learning
 % Single-State Model
 clc
@@ -179,17 +189,22 @@ box = [deadaptation_trials(1) deadaptation_trials(1)...
         deadaptation_trials(end) deadaptation_trials(end)];
 patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
-        num_trials num_trials];
-patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+        washout_trials(end)-1 washout_trials(end)-1];
+patch(box,boxy,'w','FaceAlpha',0.1, 'EdgeAlpha', 0)
+box = [num_trials num_trials ...
+        washout_trials(end) washout_trials(end)];
+patch(box,boxy,'m','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 
-legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
-    'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
+legend('adaptation trials', 'deadaptation trials', 'washout trials',...
+    'readaptation trials', 'Disturbance', 'Net Adaptation' ,'Location', 'southeast')
 
-plot_disturbance(f, num_trials, deadaptation_trials)
-plot(1:num_trials, x, 'r', 'LineWidth', 2)
+xlabel('Trial Number')
+ylabel('Adaptation')
+
+save_figure('../../../Report/figures/figure3/single_state_rl')
 %% Gain Specific Model
 clc
 close all
@@ -224,20 +239,24 @@ patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
         deadaptation_trials(end)+length_error_clamp ...
         deadaptation_trials(end)+length_error_clamp];
-patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'w','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+length_error_clamp ...
         deadaptation_trials(end)+length_error_clamp ...
         num_trials num_trials];
-patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'m','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 plot(1:num_trials, x1, '--g', 'LineWidth', 2)
 plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
-legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
-    'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
+legend('adaptation trials', 'deadaptation trials', 'washout trials',...
+    'readaptation trials', 'Disturbance', 'Net Adaptation', 'Down State', 'Up State', 'Location', 'southeast')
 
+xlabel('Trial Number')
+ylabel('Adaptation')
+
+save_figure('../../../Report/figures/figure3/gain_specific_rl')
 %% Multi-Rate Model
 clc
 close all
@@ -272,16 +291,21 @@ patch(box,boxy,'r','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+1 deadaptation_trials(end)+1 ...
         deadaptation_trials(end)+length_error_clamp ...
         deadaptation_trials(end)+length_error_clamp];
-patch(box,boxy,'g','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'w','FaceAlpha',0.1, 'EdgeAlpha', 0)
 box = [deadaptation_trials(end)+length_error_clamp ...
         deadaptation_trials(end)+length_error_clamp ...
         num_trials num_trials];
-patch(box,boxy,'k','FaceAlpha',0.1, 'EdgeAlpha', 0)
+patch(box,boxy,'m','FaceAlpha',0.1, 'EdgeAlpha', 0)
 
 plot_disturbance(f, num_trials, deadaptation_trials)
 plot(1:num_trials, x, 'r', 'LineWidth', 2)
 plot(1:num_trials, x1, '--g', 'LineWidth', 2)
 plot(1:num_trials, x2, '--b', 'LineWidth', 2)
 
-legend('adaptation trials', 'deadaptation trials', 'error clamp trials',...
-    'Disturbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
+legend('adaptation trials', 'deadaptation trials', 'washout trials',...
+    'readaptation trials', 'Disturbance','Net Adaptation', 'Slow State', 'Fast State', 'Location', 'southeast')
+
+xlabel('Trial Number')
+ylabel('Adaptation')
+
+save_figure('../../../Report/figures/figure3/multi_rate_rl')
