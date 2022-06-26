@@ -206,7 +206,7 @@
 \pagestyle{fancy}          % Enables the custom headers/footers
 
 \fancypagestyle{firststyle}{
-  \fancyfoot[R]{\footerfont Advanced Neuroscience\hspace{7pt}|\hspace{7pt} Instructor: Dr. Ghazizadeh \hspace{7pt}|\hspace{7pt}\textbf{Fall 2020}\hspace{7pt}|\hspace{7pt}\textbf{\thepage\textendash\pageref{LastPage}}}
+  \fancyfoot[R]{\footerfont Advanced Neuroscience\hspace{7pt}|\hspace{7pt} Instructor: Dr. Ghazizadeh \hspace{7pt}|\hspace{7pt}\textbf{Spring 2022}\hspace{7pt}|\hspace{7pt}\textbf{\thepage\textendash\pageref{LastPage}}}
    \fancyfoot[L]{\footerfont\@ifundefined{@doi}{}{\@doi}}
 }
 

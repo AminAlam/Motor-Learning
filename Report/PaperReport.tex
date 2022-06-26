@@ -9,7 +9,7 @@
 % {pnasmathematics} %= Template for a one-column mathematics article
 % {pnasinvited} %= Template for a PNAS invited submission
 
-\title{A Review on Interactive Adaptive Processes Which Underline Short-Term Motor Learning}
+\title{A Review on Interacting Adaptive Processes Which Underlie Short-Term Motor Learning}
 
 % Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 \author[a]{MohammadAmin Alamalhoda}
@@ -18,7 +18,7 @@
 \affil[a]{Student, EE Department, Sharif University of Technology}
 
 % Please add here a significance statement to explain the relevance of your work
-\significancestatement{Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is introduced where demonstrate that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system makes the surprising prediction of spontaneous recovery (or adaptation rebound) if error feedback is clamped at zero following an adaptation-extinction training episode.}
+\significancestatement{Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is introduced where demonstrates that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system makes the surprising prediction of spontaneous recovery (or adaptation rebound) if error feedback is clamped at zero following an adaptation-extinction training episode.}
 
 % Please include corresponding author, author contribution and author declaration information
 \authorcontributions{Author contributions}
@@ -29,7 +29,7 @@
 
 \begin{abstract}
 
-Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is reviewed that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system is capable of prediction of spontaneous recovery (adaptation rebound) if error feedback is zeros. The results suggest that motor adaptation depends on at least two distinct neural systems that have different sensitivity to error and retain information at different rates. Also, the motor skill learning will be more if the changes in the environment are slow. In this view, motor memory is a memory of motor commands, acquired through trial-and-error and reinforcement. Here is shown that the brain controls how much it is willing to learn from the current error through a principled mechanism that depends on the history of past errors. 
+Multiple models have tried to simulate the motor skill acquisition but most of them fail in producing some of the features of motor skill learning. Here a model is reviewed that within a timescale of minutes, two distinct fast-acting processes drive motor adaptation. One process responds weakly to error but retains information well, whereas the other responds strongly but has poor retention. This two-state learning system is capable of predicting spontaneous recovery (adaptation rebound) if error feedback is zeros. The results suggest that motor adaptation depends on at least two distinct neural systems that have different sensitivity to error and retain information at different rates. Also, the motor skill learning will be more if the changes in the environment are slow. In this view, motor memory is a memory of motor commands, acquired through trial-and-error and reinforcement. Here is shown that the brain controls how much it is willing to learn from the current error through a principled mechanism that depends on the history of past errors. 
 \end{abstract}
 
 \dates{This manuscript was compiled on \today}
@@ -48,7 +48,7 @@ In this report, we showed that the multi-time constant model proposed by Smith e
 
 
 \section*{Results}
-Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows saving in eye saccade adaptation. The progress of motor output in learn-unlearn-re-learn paradigms with three different models is simulated. Models are (1) a single-state, single-time-constant model, (2) a two-state, gain-specific model, and (3) a two-state, gain-independent, multi-rate model. All of these models give motor output as a function of the current motor state and the error of the last trial. The learning rules for these models are:
+Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows saving in eye saccade adaptation. The progress of motor output in learn, unlearn, and re-learn paradigms with three different models is simulated. Models are (1) a single-state, single-time-constant model, (2) a two-state, gain-specific model, and (3) a two-state, gain-independent, multi-rate model. All of these models give motor output as a function of the current motor state and the error of the last trial. The learning rules for these models are:
 
 \begin{eqnarray*}
 & (1)\;Single\;State:\\
@@ -57,21 +57,21 @@ Figure \ref{fig:saving} shows simulations of the experimental paradigm that show
 
 \begin{eqnarray*}
 & (1)\;Gain\;Specific:\\
-&x1(n+1) = min(0,[Ax_1(n)+Be(n)])\\
-&x2(n+1) = max(0,[Ax_2(n)+Be(n)])\\
+&x_1(n+1) = min(0,[Ax_1(n)+Be(n)])\\
+&x_2(n+1) = max(0,[Ax_2(n)+Be(n)])\\
 &x = x_1+x_2
 \end{eqnarray*}
 
 
 \begin{eqnarray*}
 & (1)\;Multi\;Rate:\\
-& x1(n+1) = A_fx_1(n) + B_fe(n)\\
-& x2(n+1) = A_sx_2(n) + B_se(n)\\
+& x_1(n+1) = A_fx_1(n) + B_fe(n)\\
+& x_2(n+1) = A_sx_2(n) + B_se(n)\\
 &x = x_1+x_2
 \end{eqnarray*}
 
 All of these models have error term ($e(n)$) because there is a difference between the motor output $x(n)$ and the state of the environment $f(n)$, so: $e(n) = f (n) - x(n)$.\\
-As can be seen in the results of the simulations (Figure \ref{fig:saving}), the single-state model can't reproduce saving, while both the gain-specific model proposed by Kojima et al. and the multi-rate model proposed by Shadmehr et al. can produce saving. Also, both of these models show decay in the amount of saving when null trials are inserted before the learning block which makes sense based on our intuition of the motor control processes. Because the internal states are different, both systems’ responses to the learning stimulus are altered. re-learning is faster than initial learning in the gain-specific model because both the up and down states can contribute to re-learning whereas only the upstate contributes to initial learning. In the case of the multi-rate model, re-learning is faster than initial learning because when re-learning starts, the
+As it can be seen in the results of the simulations (Figure \ref{fig:saving}), the single-state model can't reproduce saving, while both the gain-specific model proposed by Kojima et al. and the multi-rate model proposed by Shadmehr et al. can produce saving. Also, both of these models show decay in the amount of saving when null trials are inserted before the learning block which makes sense based on our intuition of the motor control processes. Because the internal states are different, both systems’ responses to the learning stimulus are altered. re-learning is faster than initial learning in the gain-specific model because both the up and down states can contribute to re-learning whereas only the upstate contributes to initial learning. In the case of the multi-rate model, re-learning is faster than initial learning because when re-learning starts, the
 slow state is already biased towards re-learning, making re-learning more dependent on the fast state compared to initial learning.\\
 
 
@@ -80,14 +80,14 @@ slow state is already biased towards re-learning, making re-learning more depend
   \centering
     \includegraphics[width=\linewidth]{figures/figure1/Fig}
   \caption{\textbf{Simulations of Motor Adaptation Experiments That Show Savings}\\
-  (A) shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. (B) shows a direct comparison of simulated performance in the initial learning and re-learning blocks.  (C) shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the re-learning block compared to the 30th trial in the initial learning block. 
+  (A) Shows the model simulations of the experiment paradigm (Disturbance plot) which is plotted in black. (B) Shows a direct comparison of simulated performance in the initial learning and re-learning blocks.  (C) Shows the amount of savings found in simulation, as a function of the number of washout trials. The amount of savings is measured as the percent improvement in performance on the 30th trial in the re-learning block compared to the 30th trial in the initial learning block. 
 }
   \label{fig:saving}
 \end{figure*}
 
 
 Although there are similarities in predictions of the gain-specific model and multi-rate model, there are differences in their internal states. It suggests that these models can evolve different motor adaptations through specific trials. Here we set up a test that a zero error paradigm (error-clamp) comes after the unlearning state, and the experiment becomes a learning, unlearning, and error clamp (Figure \ref{fig:error_clamp} A). In this case, the gain-specific and multi-rate models show different predictions about the evolution of motor output (Figure \ref{fig:error_clamp} A). In the gain-specific model, the forecast of the motor output following unlearning block remains at zero.
-In contrast, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of staying zero during this block. On the other hand, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of remaining zero. The fast state of the multi-rate model keeps following the blocks very well, but the slow state keeps tracking the learning block's motor output during the unlearning state and helps the model to rebound the motor output of the learning state transiently. Here we test another trial in which there is a re-learning block after the error-clamp state (Figure \ref{fig:error_clamp} C). With the multi-rate model, the rebounding in the error-clamp state accelerates re-learning and demonstrates the saving in this case, while the gain-specific model is unable to demonstrate this (Figure \ref{fig:error_clamp} C).
+In contrast, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of staying zero during this block. On the other hand, the multi-rate model transiently rebounds the motor output during the learning block in the error-clamp paradigm instead of remaining zero. The fast state of the multi-rate model keeps following the blocks very well, but the slow state keeps tracking the learning block's motor output during the unlearning state and helps the model to rebound the motor output of the learning state transiently. Here we test another trial in which there is a re-learning block after the error-clamp state (Figure \ref{fig:error_clamp} C). With the multi-rate model, the rebounding in the error-clamp state accelerates re-learning and demonstrates the saving in this case, while the gain-specific model is unable to demonstrating this (Figure \ref{fig:error_clamp} C).
 We then try to use a washout trial instead of the error-clamp paradigm, where the output is zero instead of the error (Figure \ref{fig:error_clamp} B). We can see that after de-adaptation, the motor output of the single state model is negative for a short time, but after that, it remains at zero. For gain-specific model, the same thing happens but the difference is the time of being negative for the motor output and it is more negative for the gain-specific model. The output of the multi-rate model is a little bit different from the error-clamp paradigm. The rebound effect can be seen here, too; But the peak of the rebound is less than the error-clamp paradigm (Figure \ref{fig:error_clamp} B). The reason for the differences is that the f(x) is zero instead of e(x), and it leads to differences in the peak values. We do it also for the second stimulation in the last part. Also, we switched the error clamp with the washout paradigm (learning, unlearning, re-learning) (Figure \ref{fig:error_clamp} E). The difference between the output of the single-state model with error-clamp and washout paradigm is just a little bit of being negative for a short while after unlearning block. The difference between outputs of the gain-specific model in two trials is just like the Single state model and there is a undershoot after the unlearning block. In contrast, the differences between the outputs of the multi-rate model are in the peak of the rebound, and a little undershoot after unlearning block. Also, a difference between the two fast states can be seen (Figure \ref{fig:error_clamp} E).
 
 
@@ -168,7 +168,7 @@ recovery does not depend upon a narrow choice of parameter values.\\
 
 
 
-As Shadmeher et al. stated (\cite{mem_error}), The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is called the error-sensitivity. They assumed the action $u(n)$ to be zero. So, the model becomes:
+As Shadmeher et al. stated \cite{mem_error}, The brain learns more from the error when it is consistent in time. This is implemented in their model by $\eta$ which is called the error-sensitivity. They assumed the action $u(n)$ to be zero. So, the model becomes:
 
 
 \begin{eqnarray*}
@@ -211,7 +211,7 @@ We have simulated this model and the results are shown in Figure \ref{fig:herzfe
     \includegraphics[width=\linewidth]{figures/figure5/Bf_Bs}
   \end{subfigure}
   \caption{\textbf{Simulation of the effects of different learning rates and forgetting factors on the amount of the spontaneous rebound predicted by the multi-rate model}\\
- All of the plots show the value of the spontaneous rebound vs different parameters of the multi-rate model. default value of the parameters is: $A_f=0.92$, $A_s=0.996$, $B_f=0.03$, and $B_s=0.004$. The amount of the spontaneous rebound is measured as the ratio of maximum recovery in the error-clamp phase to the asymptotic amount of learning during the initial learning phase. 
+ All of the plots show the value of the spontaneous rebound vs different parameters of the multi-rate model. Default value of the parameters is: $A_f=0.92$, $A_s=0.996$, $B_f=0.03$, and $B_s=0.004$. The amount of the spontaneous rebound is measured as the ratio of the maximum recovery in the error-clamp phase to the asymptotic amount of learning during the initial learning phase. 
 }
   \label{fig:mutli_rate_params}
 \end{figure}
@@ -222,7 +222,7 @@ We have simulated this model and the results are shown in Figure \ref{fig:herzfe
   \centering
     \includegraphics[width=\linewidth]{figures/figure4/Fig}
   \caption{\textbf{Herzfeld Theoretical model}\\
-  {(A)} presents model performance for slow, medium, and rapidly switching environments (gray line represents $\hat{x}^{(n)}$. {(B)} shows the error-sensitivity value over the trials for different values of Z. Z is the speed of switching of the environment. Bigger error-sensitivity values lead to less learning from the error, so the model learns more from slow switching environments in comparison with rapidly switching environments.
+  {(A)} presents model performance for slow, medium, and rapidly switching environments (gray line represents $\hat{x}^{(n)}$). {(B)} shows the error-sensitivity value over the trials for different values of Z. Z is the  switching speed of the environment. Bigger error-sensitivity values lead to less learning from the error, so the model learns more from slow switching environments in comparison with rapidly switching environments.
 }
   \label{fig:herzfeld}
 \end{figure}
