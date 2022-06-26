@@ -25,7 +25,7 @@
 \equalauthors{\textsuperscript{1}All contributed equally to this work}
 
 % Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
-\keywords{Motor learning, Multi-Rate Model, Error-Clamp} 
+\keywords{Motor learning, Multi-Rate Model, Memory of Errors} 
 
 \begin{abstract}
 
@@ -41,11 +41,12 @@ Multiple models have tried to simulate the motor skill acquisition but most of t
 \ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
 
 % If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
-\dropcap{N}ull
-\\
+\section*{Introduction}
+\dropcap{R}elearning a previously unlearned stimulus-response relationship is faster than the initial learning in case of savings in the system \cite{main_paper}. Compensating the disturbance from the external environment or the motor system itself is called motor adaptation. Recent studies show savings in motor adaptation  \cite{Kojima}. Also, better performance is reported by having no feedback trials between extinction and re-adaptation trials \cite{Kojima}. 
+Until now, three models of trial-to-trial adaptation is proposed: Single state, Gain specific, and Multi rate. The single state model predicts the motor responses to disturbances and successfully assesses the pattern of generalization [\cite{Scheidt}, \cite{Baddeley}, \cite{Thoroughman}, and \cite{Donchin}]; But the problem is that this model is single time constant adaptation and this leads to failure in other experiments like anterograde interference, rapid de-adaptation, and rapid downscaling. In the anterograde interference paradigm we have an initial learning block and then a de-adaptation block in which we expect to have lower performance and a slower time constant for the de-adaptation block [\cite{Bizzi}, \cite{shadmehr_jn}, \cite{Wolpert}] . A two-state model is suggested by Kojima et al. which can successfully model saving and washout of saving but fails for recovery of the initially adapted state in no feedback error block and also fails for described anterograde interference \cite{Kojima}.
+In this report, we showed that the multi time constant model proposed by Smith et al. can correctly model the motor response under different experiments and paradigms \cite{main_paper}. Herzfeld et al. also presented a model in which they showed that the brain decides how much to learn from a current error based on the history of previous errors \cite{mem_error}. This is also implemented and tested under different disturbances.\\
+
 \section*{Results}
-
-
 Figure \ref{fig:saving} shows simulations of the experimental paradigm that shows saving in eye saccade adaptation. The progress of motor output in learn-unlearn-re-learn paradigms with three different models is simulated. Models are (1) a single-state, single-time-constant model, (2) a two-state, gain-specific model, and (3) a two-state, gain-independent, multi-rate model. All of these models give motor output as a function of the current motor state and the error of the last trial. The learning rules for these models are:
 
 \begin{eqnarray*}
@@ -188,21 +189,6 @@ On trial $n-1$ the motor command $u(n-1)$ produces an error $e(n-1)$ , the nervo
 
 We have simulated this model and the results are shown in Figure \ref{fig:herzfeld}. Also the relation between the speed of changes in environment with error-sensivity is plotted shown in Figure \ref{fig:herzfeld} B. 
 
-\section*{Material and Method}
-We used specific learning rates and formulas below for obtaining the output of the models stated in the text.
-
-\begin{eqnarray*}
-& perturbation\;trials : e(n)=f(n)-x(n)\\
-& error-clamp trials : e(n) = 0\\
-& e(n) = error\;on\;trial\;n\\
-& x(n) = adapted\;motor\;output\;on\;trial\;n\\
-& f(n) = disturbance\;on\;trial\;n
-\end{eqnarray*}
-
-For all of the figures, parameters of the single-state and gain-specific models are set as $A=0.99$, $B=0.013$ and for the multi-rate are set as $A_f = 0.92$, $A_s = 0.996$, $B_f = 0.03$, and $B_s = 0.004$. Also, as shown in Figure \ref{fig:mutli_rate_params}, the qualitative results that are described in the text do not depend on these particular parameter values; they hold as long as all parameters are positive, and $B_f$ is several-fold larger than $B_s$, and $A_s$ is several times closer to one than $A_f$.
-
-The number of washout trials varied from 0 to 300, and the percent savings was computed for each simulation as the performance improvement on trial 30 of the re-learning block versus trial 30 of the initial learning block. All of the simulations were done using Matlab.
-
 \begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.32\linewidth}
@@ -244,9 +230,30 @@ The number of washout trials varied from 0 to 300, and the percent savings was c
 
 
 
+\section*{Material and Method}
+We used specific learning rates and formulas below for obtaining the output of the models stated in the text.
 
 
-\newpage
+\begin{eqnarray*}
+& perturbation\;trials : e(n)=f(n)-x(n)\\
+& error-clamp trials : e(n) = 0\\
+\end{eqnarray*}
+and:
+\begin{eqnarray*}
+& e(n) = error\;on\;trial\;n\\
+& x(n) = adapted\;motor\;output\;on\;trial\;n\\
+& f(n) = disturbance\;on\;trial\;n
+\end{eqnarray*}
+
+For all of the figures, parameters of the single-state and gain-specific models are set as $A=0.99$, $B=0.013$ and for the multi-rate are set as $A_f = 0.92$, $A_s = 0.996$, $B_f = 0.03$, and $B_s = 0.004$. Also, as shown in Figure \ref{fig:mutli_rate_params}, the qualitative results that are described in the text do not depend on these particular parameter values; they hold as long as all parameters are positive, and $B_f$ is several-fold larger than $B_s$, and $A_s$ is several times closer to one than $A_f$.
+
+The number of washout trials varied from 0 to 300, and the percent savings was computed for each simulation as the performance improvement on trial 30 of the re-learning block versus trial 30 of the initial learning block. All of the simulations were done using Matlab.
+
+
+
+
+
+
 
 \acknow{We highly appreciate ... }
 
